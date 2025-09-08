@@ -1,0 +1,294 @@
+/* --- Colores --- */
+:root {
+  /* ... (Tus variables de color y tipografía se mantienen) ... */
+  --color-text-body: #333;
+  --color-bg-body: #f4f6f9;
+  --color-bg-panel2: #ffffff;
+  --color-bg-panel: #ccedff;
+  --color-bg-blue1: #33bafa;
+  --color-bg-blue2: #66cbff;
+  --color-bg-blue3: #99ddff;
+  --color-bg-blue4: #ccedff;
+  --color-bg-blue5: #e6f7ff;
+  --color-bg-blue6: #ecf9ff;
+  --color-bg-blue7: #f2faff;
+  --color-bg-blue8: #f7fcff;
+  --color-bg-blue9: #fbfdff;
+
+
+  /* --- Tipografía --- */
+  --font-family-base: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    
+  /* --- Estilos de Componentes --- */
+  --border-radius-base: 10px;
+  --shadow-base: 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-deep: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* --- Cuerpo principal de la página --- */
+body {  
+  background-color: var(--color-bg-body);
+  font-family: var(--font-family-base);  
+  color: var(--color-text-body);
+}
+
+/* --- Contenedores de contenido (adaptados) --- */
+.title-container, 
+.subtitle-container, 
+.text-container,
+.chart-container,
+.left-container,
+.right-container,
+.prov-container,
+.filter-container,
+.chart-container-table {
+  /* background-color: var(--color-bg-panel) !important; */
+  padding: 15px;
+  box-shadow: var(--shadow-deep);
+  flex-direction: column;
+  border-radius: var(--border-radius-base);
+}
+
+/* Ajustes específicos para contenedores */
+.title-container, .subtitle-container {
+  padding: 15px;
+  height: auto; /* Altura automática basada en el contenido */
+}
+
+.title-container {
+  background-color: var(--color-bg-blue3) !important;
+}
+
+.subtitle-container {
+  background-color: var(--color-bg-blue3) !important;
+  margin-top: 2px !important;
+}
+
+.text-container {
+  background-color: var(--color-bg-blue5) !important;
+  height: auto; /* Altura automática */
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  height: 39vh;
+  margin-bottom: 15px;
+  background-color: var(--color-bg-blue8) !important;
+}
+
+.left-container {
+  height: 90vh;
+  background-color: var(--color-bg-blue4) !important;
+}
+
+.right-container {
+  height: 90vh;
+  background-color: var(--color-bg-panel2) !important;
+}
+
+.filter-container,  {
+  height: 90vh;
+  background-color: var(--color-bg-blue2) !important;
+}
+.prov-container {
+  /*background-color: #4dd3ff !important;*//*var(--color-bg-box3)*/ 
+  background-image: url('fondo_prov.PNG');
+  background-size: cover;       /* Para cubrir todo el div */
+  background-position: center;  /* Centrar la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  height: 30%; 
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra elegante */
+  transition: transform 0.2s, box-shadow 0.2s;
+ /* justify-content: flex-start;
+  align-items: flex-start;*/
+}
+.prov-container:hover {
+      transform: translateY(-5px);               /* efecto hover */
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+.chart-container-table {
+  height: auto;
+  min-height: 300px;
+  background-color: var(--color-bg-blue7) !important;
+}
+
+
+/* --- Barra de navegación (Responsive) --- */
+.navbar {
+  margin-bottom: 10px;
+  min-height: auto; /* Se elimina la altura fija */
+  height: auto; /* Se elimina la altura fija */
+}
+
+.container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.navbar-brand {
+  height: auto;
+  line-height: normal;
+  padding-top: 8px; /* Padding responsivo en lugar de altura fija */
+  padding-bottom: 8px;
+}
+
+.navbar-nav > li > a {
+  height: auto;
+  line-height: normal;
+  padding-top: 10px; /* Padding responsivo */
+  padding-bottom: 10px;
+}
+
+/* Estilo con imagen de fondo para el cuadro de diálogo modal */
+.custom-modal-bg {
+  background-image: url('fondo_diag.png');
+  background-size: cover;         /* Escala la imagen para cubrir el fondo */
+  background-position: center;    /* Centra la imagen */
+  background-repeat: no-repeat;   /* Evita que la imagen se repita */
+}
+
+
+
+
+/* Media Queries para Tablets (ancho de pantalla hasta 768px) */
+@media (max-width: 768px) {
+    /* Los contenedores se apilan y sus paddings se reducen */
+    .title-container,
+    .subtitle-container,
+    .text-container,
+    .chart-container,
+    .left-container,
+    .right-container,
+    .prov-container,
+    .filter-container,
+    .chart-container-table {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Reducir el tamaño de las fuentes en elementos clave */
+    .navbar-brand, .navbar-nav > li > a {
+        font-size: 1.1em;
+    }
+
+    .title-1, .title-2 {
+        font-size: 0.9em;
+    }
+
+    .checkbox-inline label, .checkbox label {
+        font-size: 0.9em;
+    }
+}
+
+/* Media Queries para Teléfonos Móviles (ancho de pantalla hasta 480px) */
+@media (max-width: 480px) {
+    /* Los contenedores ocupan el 100% del ancho del viewport */
+    .title-container,
+    .subtitle-container,
+    .text-container,
+    .chart-container,
+    .left-container,
+    .right-container,
+    .prov-container,
+    .filter-container,
+    .chart-container-table {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .chart-container {
+      height: 350px;
+    }
+    
+    .left-container {
+      height: 350px;
+    }
+    
+    .right-container {
+      height: 330px;
+    }
+
+
+    /* Los elementos de la barra de navegación se apilan o se vuelven parte de un menú hamburguesa si se usa Bootstrap */
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* --- Estilos para los títulos de los grupos de casillas --- */
+.title-1, .title-2 {
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0px;
+}
+
+.title-1 {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.title-2 {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+/* --- Estilos para los checkbox y sus etiquetas --- */
+.checkbox-inline, .checkbox {
+  padding-top: 1px;
+  margin-top: 0px; 
+  margin-bottom: 0px; /* Eliminamos el margen del elemento individual */
+}
+
+.checkbox-inline label, .checkbox label {
+  font-size: 0.8em; /* Aplicamos el tamaño de fuente directamente a la etiqueta */
+}
+
+.form-group.shiny-input-checkboxgroup {
+  margin-top: 5px; 
+  margin-bottom: 5px; /* Controlamos el espacio a nivel de todo el grupo */
+}
+
+/* --- Estilos para el grupo de casillas de verificación --- */
+.grupo-checkbox {
+  padding: 0;
+  margin-top: 0px; 
+  margin-bottom: 0px;
+  background-color: var(--color-bg-blue6) !important; /* #f0f2f5; */
+}
+
+.grupo-checkbox .checkbox-inline input[type="checkbox"],
+.grupo-checkbox .checkbox input[type="checkbox"] {
+  width: 4em;
+  height: 4em;
+  accent-color: #CDF7FF;
+  background-color: var(--color-bg-blue6) !important; /* #CDF7FF; */
+  border: 0 solid #CDF7FF;
+}
+
+
+/* --- Estilos para los botones pequeños --- */
+.btn-xs {
+  width: 50px;
+  padding: 2px;
+  font-size: 0.75em;
+  line-height: 1.5;
+  border-radius: 3px;
+  margin-right: 8px;
+  margin-top: 0px; 
+  margin-bottom: 0px;
+  background-color: #007BFF; 
+  color: #black; 
+  border: 1px solid #007BFF;
+}
+
+/* --- Estilo para el efecto hover --- */
+.btn-xs:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
