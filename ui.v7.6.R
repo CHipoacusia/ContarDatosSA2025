@@ -760,10 +760,20 @@ ui <- fluidPage(
     
     
     footer = tags$footer(
-      p("Datos de Paredes, Julio; © 2024 - Diseño de la presentación: Moretti, Yael; Ferrara, Marco Aurelio y Perera, Jorge.",
-        br(), "Resolución recomendada para el navegador: 1920 x 1200 px",
-        style = "font-family: Arial; font-size: 12px; text-align: center; margin-top: 10px")
-    ) # tags$footer
+      p(
+        "Datos de Paredes, Julio; © 2024 - Diseño de la presentación: Moretti, Yael; Ferrara, Marco Aurelio y Perera, Jorge.",
+        br(),
+        "Resolución recomendada para el navegador: 1920 x 1200 px // ",
+        
+        tags$a(
+          "Código disponible en github",
+          href = "https://github.com/CHipoacusia/ContarDatosSA2025",
+          target = "_blank"
+        ),
+        
+        style = "font-family: Arial; font-size: 12px; text-align: center; margin-top: 10px"
+      )
+    )
     
   ) # navbarPage
   
